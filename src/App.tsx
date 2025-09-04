@@ -1,4 +1,4 @@
-import { Redirect, Route } from "react-router-dom";
+import { Redirect, Route, HashRouter } from "react-router-dom";
 import { IonApp, IonRouterOutlet, setupIonicReact } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import Cartao from "./pages/Cartao";
@@ -39,15 +39,17 @@ setupIonicReact();
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
-      <IonRouterOutlet>
-        <Route exact path="/Cartao">
-          <Cartao />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/Cartao" />
-        </Route>
-        <Route path="/Sobre" component={Sobre} exact></Route>
-      </IonRouterOutlet>
+      <HashRouter>
+        <IonRouterOutlet>
+          <Route exact path="/Cartao">
+            <Cartao />
+          </Route>
+          <Route exact path="/">
+            <Redirect to="/Cartao" />
+          </Route>
+          <Route path="/Sobre" component={Sobre} exact></Route>
+        </IonRouterOutlet>
+      </HashRouter>
     </IonReactRouter>
   </IonApp>
 );
