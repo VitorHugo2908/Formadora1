@@ -12,7 +12,7 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: "./src/setupTests.ts",
   },
-  base: "/Formadora1",
+
   build: {
     outDir: "build",
   },
